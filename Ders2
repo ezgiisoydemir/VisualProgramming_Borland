@@ -1,0 +1,61 @@
+# Çift slash yorum kısmı. Hoca o şekilde soruları yazıyor
+2.Soru = Yarıçapı verilen bir dairenin alanını ve çevresini hesaplayıp ekrana ya da editbox içerisine yazdıran kod
+
+
+Hesapla Kutusunun içindeki kod
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// Verilen yarıçap değeri ile dairenin çevresini,alanına
+// hesaplayıp sonucu editbox içerisine yazan programı oluturunuz.
+
+float r,pi,alan,cevre;
+r=cevre=alan=0.0; //İlk önce değerleri sıfırladık
+r=StrToFloat(Edit1->Text);
+pi= 3,141596;
+cevre = 2*pi*r;
+alan = pi*r*r;
+Edit2->Text=FloatToStr(cevre);
+Edit3->Text=FloatToStr(alan);
+}
+
+BU KODU EKRANA YAZDIRMAK İSTERSEK
+
+float r,pi,alan,cevre;
+r=cevre=alan=0.0; //İlk önce değerleri sıfırladık
+r=StrToFloat(Edit1->Text);
+pi= 3,141596;
+cevre = 2*pi*r;
+alan = pi*r*r;
+ShowMessage("Dairenin Alanı="+FloatToStr(alan)+"\n"+
+            "Dairenin Çevresi="+FloatToStr(cevre));
+
+FİLE->SAVE AS->(codu saklamak için) !!! TÜRKÇE KARAKTER KULLANMA .mak
+FİLE->SAVE PROJECT AS->(projeyi saklamak için) 
+
+
+
+
+
+
+
+
+
+
+
+
+
