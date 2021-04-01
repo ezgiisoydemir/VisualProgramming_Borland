@@ -3,7 +3,9 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 ShowMessage("C++ BUİLDER PROGRAMLAMA ÖĞRENİYORUM");
 }
 
-## Buton ekledikten sonra çift tıkla
-##Ardından MEsaj gir kodunu yaz
-##Derle / Build all 
-##Run
+# Buton ekledikten sonra çift tıkla
+# Ardından MEsaj gir kodunu yaz
+# Derle / Build all 
+# Run
+# Bu program tek tırnak kabul etmiyor
+# Büyük küçük harflere dikkat et
