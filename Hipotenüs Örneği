@@ -1,0 +1,35 @@
+Soru3: Hipotenüsü hesaplayan bir program yaz
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include <math.h> //Matematik kütüphanesi
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// Dik kenarları verilen üçgenin hipotenüsünü
+// hesaplayan program oluşturunuz
+
+
+float a,b,h;
+a = StrToFloat(Edit1->Text); // Anın içine yazdık en son parantez içinin anlamı
+b = StrToFloat(Edit2->Text);
+h=sqrt((a*a)+(b*b));        //square root = karekök alma
+Edit3->Text = FloatToStr(h);
+}
+//---------------------------------------------------------------------------
+
+BAŞKA BİR BİÇİMDE HİPOTENÜS YAZMAK İSTERSEK
+h=sqrt(pow(a,2)+pow(b,2));  //pow kare demek
+h=pow((pow(a,2)+pow(b,2)),0.5);
+
