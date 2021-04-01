@@ -1,0 +1,33 @@
+Soru4: Girilen ondalıklı sayıyı yuvarlama
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//Girilen ondalıklı sayıyı yuvarlayıp tam sayıya
+//çeviren programı oluşturunuz.
+//NOT: Sayıya 0.5 ilave edip tam kısmını
+//alırsanız yuvarlamış olursunuz.
+
+float a;
+int y;
+a = StrToFloat(Edit1->Text);     //Metni ondalıklı sayıya çevir
+y=int(a+0.5);
+Edit1->Text = IntToStr(y);
+
+}
+
+
+
