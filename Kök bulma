@@ -1,0 +1,38 @@
+Soru: Klavyeden girilen a,b,c katsayılarını kullanarak y=ax^2+bx+c denkleminin kökünü hesaplayan programı oluşturunuz.
+Kökü yok ise ekrana mesaj yazıp programı sonlandırınız
+
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include <math.h>
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+float a,b,c,delta,x1,x2;
+a = StrToFloat(Edit1->Text);
+b = StrToFloat(Edit2->Text);
+c = StrToFloat(Edit3->Text);
+
+delta=pow(b,2)-4*a*c;
+if (delta<0){ShowMessage("Reel Kök Yoktur");
+                               goto son;
+                                    }
+else {x1=(-b+sqrt(delta))/(2*a);
+      x2=(-b-sqrt(delta))/(2*a);
+      }
+Edit4->Text=FloatToStr(x1); 
+Edit5->Text=FloatToStr(x2);
+son:
+
+}
+//---------------------------------------------------------------------------
