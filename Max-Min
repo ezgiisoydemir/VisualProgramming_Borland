@@ -1,0 +1,34 @@
+Soru =  Edit Box içerisinden girilen 3 sayının en büyüğü ve en küçüğünü bulup ekrana yazan programı oluşturunuz 
+
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int a,b,c;
+a=StrToInt(Edit1->Text); //Edit1in text ini al String(Metin)den SAyıya dönüştür
+                        //anın içine at
+b=StrToInt(Edit2->Text);
+c=StrToInt(Edit3->Text);
+
+if((a>b)&&(a>c)) Edit5->Text=IntToStr(a);
+if((b>a)&&(b>c)) Edit5->Text=IntToStr(b);
+if((c>b)&&(c>a)) Edit5->Text=IntToStr(c);
+
+if((a<b)&&(a<c)) Edit4->Text=IntToStr(a);
+if((b<a)&&(b<c)) Edit4->Text=IntToStr(b);
+if((c<b)&&(c<a)) Edit4->Text=IntToStr(c);
+}
+//---------------------------------------------------------------------------
