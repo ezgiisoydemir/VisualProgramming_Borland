@@ -1,0 +1,28 @@
+[0-n] aralığında sayıların toplamını bulup ekrana yazan programı oluşturunuz.
+Artış oranı ve n sayısı EDit1 ve Edit2'den girilmektedir.
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include <stdio.h>
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+float artis,n,toplam;
+int x;
+n=StrToFloat(Form1->Edit1->Text);
+artis=StrToFloat(Form1->Edit2->Text);
+for(x=0;x<=n;x=x+artis;
+    toplam=toplam+artis;
+ShowMessage("Aralıktaki sayılar toplamı= "+FloatToStr(toplam);
+}
+//---------------------------------------------------------------------------
