@@ -19,6 +19,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 float artis,n,toplam;
 int x;
+toplam=0.0;
 n=StrToFloat(Form1->Edit1->Text);
 artis=StrToFloat(Form1->Edit2->Text);
 for(x=0;x<=n;x=x+artis)
