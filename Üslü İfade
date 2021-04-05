@@ -22,7 +22,7 @@ toplam=1;
 a=StrToInt(Edit1->Text);
 b=StrToInt(Edit2->Text);
 for(x=1;x<=b;x++)
-toplam=toplam*a;
+{toplam=toplam*a;}
 ShowMessage("a^b ="+IntToStr(toplam));
 }
 //---------------------------------------------------------------------------
