@@ -21,7 +21,7 @@ float artis,n,toplam;
 int x;
 n=StrToFloat(Form1->Edit1->Text);
 artis=StrToFloat(Form1->Edit2->Text);
-for(x=0;x<=n;x=x+artis);
+for(x=0;x<=n;x=x+artis)
     toplam=toplam+artis;
 ShowMessage("Aralıktaki sayılar toplamı= "+FloatToStr(toplam));
 }
