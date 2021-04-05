@@ -1,0 +1,28 @@
+Soru: Klavyeden girilen n tamsayısı için n! değerini hesaplayan programı oluşturunuz.
+n tamsayısı Edit1 içerisinden alınıp sonuç Edit2 içine yazılacaktır.
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int a,n,sonuc;
+sonuc=1;
+n=StrToInt(Edit1->Text);
+for(a=n;a>=1;a--)
+sonuc=sonuc*a;
+Edit2->Text=IntToStr(sonuc);
+}
+//---------------------------------------------------------------------------
+
