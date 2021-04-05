@@ -1,0 +1,50 @@
+Soru: Kenar uzunlukları verilen üçgenin alanını hesaplayan programı oluşturunuz. Üçgen belirtmediği durumda ekrana mesaj        
+     yazip programı sonlandırınız.     
+     S=(A+B+C)/2       
+     ALAN=(S(S-A)(S-B)(S-C))^0.5
+
+
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#include <math.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+float a,b,c,s,alan;
+a=StrToFloat(Edit1->Text);
+b=StrToFloat(Edit2->Text);
+c=StrToFloat(Edit3->Text);
+
+//fabs = Mutlak Değer
+if((a>(b+c))||(a<fabs(b-c))) {
+ShowMessage("Ucgen Belirtmez");
+goto bitir;
+}
+if((b>(a+c))||(b<fabs(a-c))) {
+ShowMessage("Ucgen Belirtmez");
+goto bitir;
+}
+if((c>(b+a))||(c<fabs(b-a))) {
+ShowMessage("Ucgen Belirtmez");
+goto bitir;}
+
+s=(a+b+c)/2.0;
+alan=sqrt(s*(s-a)*(s-b)*(s-c));
+Edit4->Text=FloatToStr(alan);
+
+bitir:
+
+}
+//---------------------------------------------------------------------------
