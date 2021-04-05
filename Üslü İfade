@@ -1,0 +1,28 @@
+Soru: Klavyeden girilen a,b tamsayıları için a^b değerini FOR komutu kullanarak hesaplayan programı oluşturunuz.
+a,b değerleri Edit1 ve Edit2 içerisinden girilip ekrana mesaj şeklinde yazılacaktır.
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include <stdio.h>
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int x,b,a,toplam;
+toplam=1;
+a=StrToInt(Edit1->Text);
+b=StrToInt(Edit2->Text);
+for(x=1;x<=b;x++)
+toplam=toplam*a;
+ShowMessage("a^b ="+IntToStr(toplam));
+}
+//---------------------------------------------------------------------------
