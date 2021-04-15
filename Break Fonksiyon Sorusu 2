@@ -1,0 +1,29 @@
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//[0,10] aralığında y=1/(x-3) fonksiyon değerleri...
+// break continue komutlarını kullanır...
+
+int x;
+float y;
+for(x=0;x<=10;x=x+1)
+{
+ if(x==3) break;
+          else(y=1.0/(x-3));
+                          ShowMessage("x="+IntToStr(x)+"\n"+
+                          "y="+FloatToStr(y));
+}
+}
