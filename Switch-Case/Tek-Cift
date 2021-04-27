@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//Girilen sayının ÇİFT/TEK olma durumunu switch
+//komutuyla tespit eden program
+
+int a,b;
+a = StrToInt(Edit1->Text);
+b=a%2;
+switch(b)
+{
+case 0: ShowMessage("Girilen sayı çifttir");
+       break;
+case 1: ShowMessage("Girilen sayı çifttir");
+       break;
+default: break;
+}
+}
+//---------------------------------------------------------------------------
