@@ -1,0 +1,39 @@
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//pi=sqrt(8*(1/1^2 + 1/3^2 + 1/5^2 + 1/7^2 + ... + 1/n^2))
+//girilen n sayısı tek olmak zorundadır
+
+int n;
+float p,x;
+p=0.0;
+
+n=StrToFloat(Edit1->Text);
+
+if(n<0) goto bitir;
+
+if((n%2)==0)
+n++;
+
+for(x=1;x<=n;x=x+2)
+p = p+1 / pow(x,2);
+p = sqrt(8*p);
+
+Edit2->Text = FloatToStr(p);
+bitir:
+
+}
+//---------------------------------------------------------------------------
