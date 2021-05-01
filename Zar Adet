@@ -1,0 +1,47 @@
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// Klaavyeden girilen n tamsayısı kadar zar atıp
+// zar gelme sayılarını bulup EditBox içine
+// yazan program
+
+int n,x,a,z1,z2,z3,z4,z5,z6;
+z1=z2=z3=z4=z5=z6=0;
+srand(time(NULL));
+n=StrToInt(Edit1->Text);
+for(x=1;x<=n;x++)
+{
+ a=rand()%6;
+ if(a==0) z1++;
+ if(a==1) z2++;
+ if(a==2) z3++;
+ if(a==3) z4++;
+ if(a==4) z5++;
+ if(a==5) z6++;
+ }
+ Edit2->Text=IntToStr(z1);
+ Edit3->Text=IntToStr(z2);
+ Edit4->Text=IntToStr(z3);
+ Edit5->Text=IntToStr(z4);
+ Edit6->Text=IntToStr(z5);
+ Edit7->Text=IntToStr(z6);
+
+}
+//---------------------------------------------------------------------------
