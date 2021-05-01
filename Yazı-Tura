@@ -1,0 +1,42 @@
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// Klaavyeden girilen n tamsayısı kadar para atıp
+// YAZI/TURA gelme sayılarını bulup EditBox içine
+// yazan programı SWITCH komutu ile yazınız
+
+int n,x,y,t,a;
+y=t=0;
+srand(time(NULL));
+n=StrToInt(Edit1->Text);
+for(x=1;x<=n;x++);
+{
+ a=rand()%2;
+ switch(a)
+ {
+  case 0: y++;
+          break;
+  case 1: t++;
+          break;
+  }
+ }
+Edit2->Text=IntToStr(y);
+Edit3->Text=IntToStr(t);
+}
+//--------------------------------------------------------------------------- 
