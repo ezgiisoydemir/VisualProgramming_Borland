@@ -1,0 +1,51 @@
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int s1,s2,s3,s4,s5,s6;
+srand(time(NULL));
+
+yeniden:
+
+s1=1+rand()%90;
+
+s2=1+rand()%90;
+if(s1==s2) goto yeniden;
+
+s3=1+rand()%90;
+if((s1==s3)||(s2==s3)) goto yeniden;
+
+s4=1+rand()%90;
+if((s1==s4)||(s2==s4)||(s3==s4)) goto yeniden;
+
+s5=1+rand()%90;
+if((s1==s5)||(s2==s5)||(s3==s5)||(s5==s4)) goto yeniden;
+
+s6=1+rand()%90;
+if((s1==s6)||(s2==s6)||(s3==s6)||(s4==s6)||(s5==s6)) goto yeniden;
+
+Edit1->Text = IntToStr(s1);
+Edit2->Text = IntToStr(s2);
+Edit3->Text = IntToStr(s3);
+Edit4->Text = IntToStr(s4);
+Edit5->Text = IntToStr(s5);
+Edit6->Text = IntToStr(s6);
+
+}
+//---------------------------------------------------------------------------
