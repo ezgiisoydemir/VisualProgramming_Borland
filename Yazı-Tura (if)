@@ -25,7 +25,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 int n,x,a;
 srand(time(NULL));
 n=StrToInt(Edit1->Text);
-for(x=1;x<=n;x++);
+for(x=1;x<=n;x++)
 {
  a=rand()%2;
  if(a==0) ShowMessage("YAZI");
