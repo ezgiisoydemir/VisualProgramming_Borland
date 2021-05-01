@@ -19,8 +19,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 // Klaavyeden girilen n tamsayısı kadar para atıp
-// YAZI/TURA gelme sayılarını bulup EditBox içine
-// yazan programı if komutu ile yazınız
+// YAZI/TURA if ile bulan program
 
 int n,x,a;
 srand(time(NULL));
