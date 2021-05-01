@@ -1,0 +1,31 @@
+
+// C'de en çok kullanılan math.h kütüphanesini gerektiren fonksiyonlar ve kullanımları
+
+sqrt(x) -> Karekök-> sqrt(900.0)=30
+
+exp(x) -> e^x -> exp(1)=2,718282
+
+log(x) -> ln(x) -> log(2,718282)=1
+
+log10(x) -> 
+
+abs(x) -> |x|,x tam sayı -> abs(-3)=3
+
+fabs(x) -> |x|,x ondalıklı sayı -> fabs(-4,78) = 4,78  {f=float}
+
+ceil(x) -> Büyük tamsayıya yuvarlar -> ceil(9,2) = 10.0 
+tavan                                  ceil(-9,8) = -9.0
+
+floor(x) -> Küçük tamsayıya yuvarlar -> floor(9,2) = 9.0 
+taban                                   floor(-9,8) = -10.0
+
+pow(x,y) -> x^y -> pow(2,7) =128
+
+fmod(x,y) -> x/y işleminden ondalıklı kalan -> fmod(13.657,2.333) = 1.992
+
+sin(x) -> sin(x),*radyan -> sin(0) = 0
+
+cos(x) -> cos(x),*radyan -> cos(0) = 1
+
+tan(x) -> tan(x),*radyan -> tan(0) = 0
+
