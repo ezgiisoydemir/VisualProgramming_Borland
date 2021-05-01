@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//Klavyeden girilen n tamsayısı kadar zar atıp sonucu ekrana
+//yazan programı oluşturunuz
+
+int n,x,a;
+n=StrToInt(Edit1->Text);
+srand(time(NULL));  //Tam rastgele sayılar için kullanılır
+for(x=1;x<=n;x++)
+{a=1+rand()%6;
+ShowMessage("Zar değeri ="+IntToStr(a));
+}
+}
+//---------------------------------------------------------------------------
