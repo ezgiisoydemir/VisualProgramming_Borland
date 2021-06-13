@@ -1,0 +1,56 @@
+
+// [0,100] aralığında bilgisayarın ürettiği rasgele N adet tam sayının MEDYEN değerini bulan programı oluşturunuz.
+   MEDYEN: Sıralandıktan sonra dizinin ortasındaki sayıdır   
+
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include "stdio.h"
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int a[1000]={0};
+int n,x,y,b;
+n=StrToInt(Edit1->Text);
+if(n>1000)
+  {ShowMessage("1000 den küçük sayı girin");
+   goto son;}
+
+if((n%2)==0)
+  n++;
+srand(time(NULL));
+for(x=0;x<n;x++)
+  a[x]=rand()%101;
+for(x=0;x<n;x++)
+{
+for(y=x+1;y<=n;y++)
+{
+if(a[x]>a[y])
+{
+b=a[x];
+a[x]=a[y];
+a[y]=b;
+}
+}
+}
+for(x=0;x<n;x++)
+  ShowMessage(IntToStr(a[x]));
+
+n=n/2;
+ShowMessage("n= " + IntToStr(n));
+ShowMessage("MEDYEN = " + IntToStr(a[n]));
+
+son:
+
+}
+//---------------------------------------------------------------------------
