@@ -1,0 +1,18 @@
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+/// Dosyaya Yazma İşlemi
+if((f=fopen("c:\\rastgele.twt","w"))==NULL) ///w = write demek
+ShowMessage("Dosya Açılmadı");
+fprintf(f,"%f\n",&a);
+fprintf(f,"%d\n",&sayac);
+fclose(f);
+
+/// Dosyadan okuma işlemi
+if((f=fopen("c:\\rastgele.twt","r"))==NULL) ///r = read demek
+ShowMessage("Dosya Açılmadı");
+fprintf(f,"%f\n",&a);
+fprintf(f,"%d\n",&sayac);
+fclose(f);
+
+}
