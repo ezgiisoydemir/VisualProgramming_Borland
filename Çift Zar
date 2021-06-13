@@ -1,0 +1,41 @@
+// Bilgisayara 36000kez çift zar attırılmaktadır. Zarların toplam değerlerinden kaçar kez geldiğini dosya
+içerisine yazan programı oluşturunuz.
+
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+#include "stdio.h"
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// Çift Zar
+int a,b,c,zar[13] = {0};
+float n,x;
+FILE *f;
+srand(time(NULL));
+n = StrToFloat(Edit1->Text);
+for(x=1;x<=n;x++)
+{
+a = 1 + rand()%6;
+b = 1 + rand()%6;
+c=a+b;
+zar[c] = zar[c]+1;
+if((f=fopen("c:\\zartoplam.txt","w"))==NULL)
+ShowMessage("Dosya açılmadı");
+for(a=2;a<=12;a++)
+fprintf(f,"[%d]=%f \n",a,zar[a]);
+fclose(f);
+
+}
+}
+//---------------------------------------------------------------------------
