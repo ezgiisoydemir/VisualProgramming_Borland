@@ -1,4 +1,3 @@
-
 //---------------------------------------------------------------------------
 #include <vcl\vcl.h>
 #pragma hdrstop
@@ -15,9 +14,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-/// Dizi oluşturup elemanlarını ekrana yazma
-int i,n[10]={32,27,64,18,95,14,90,70,60,13};
-for(i=0;i<=9;i++)
-ShowMessage(IntToStr(n[i]));
+int i,a[5]={1,2,4,8,16};
+for(i=0;i<5;i++)
+ShowMessage(IntToStr(i)+ " . eleman " + a[i]);
 }
 //---------------------------------------------------------------------------
