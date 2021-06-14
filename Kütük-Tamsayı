@@ -1,0 +1,24 @@
+
+// [a,b] aralığında rasgele 25 sıralı tamsayıyı kütüğe yazma
+
+
+int x,y,a,b,g,r[25];
+FILE *f;
+if((f=fopen("c:\\rasgele_dizi.txt","w")) ==NULL)
+srand(time(NULL));
+a=StrToInt(Edit1->Text);
+b=StrToInt(Edit2->Text);
+for(x=0;x<25;x++){
+  r[x]=a+rand()%(b-a+1);
+  //ShowMessage(IntToStr(r[x]));
+  }
+for(x=0;x<24;x++){
+   for(y=x+1;y<25;y++){
+       if(r[x]>r[y]){ g=r[x];
+                      r[x]=r[y];
+                      r[y]=g;}
+   }}
+for(x=0;x<25;x++)
+  fprintf(f,"%4d  \n",r[x]);
+fclose(f);
+ShowMessage("25 rasgele sayı dosya içerisine yazılmıştır....");
