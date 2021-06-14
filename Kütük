@@ -1,0 +1,39 @@
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+int a;
+float b;
+FILE *f;
+a=32;
+b=12.3245;
+// Dosya açıp içine yazma
+f=fopen("d:\\dosya.txt","w");
+fprintf(f,"%d\n",a);
+fprintf(f,"%f\n",b);
+fclose(f); /* Dosya Kapatma */
+
+// Dosyadan okuma
+f = fopen("d:\\dosya.txt","r");
+fscanf(f"%d \n",&a);
+fscanf(f"%d \n",&b);
+
+ShowMessage(IntToStr(a));
+ShowMessage(FloatToStr(b));
+fclose(f);
+
+}
+//---------------------------------------------------------------------------
