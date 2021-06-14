@@ -1,0 +1,40 @@
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+// [0,n] aralığındaki asal sayıları bulup asal.txt
+// dosyasına alt alta yazan programı oluşturunuz
+
+int say,x,n,y;
+n=StrToInt(Edit1->Text);
+FILE *f;
+if((f=fopen("c:\\asal.txt","w"))==NULL)
+  ShowMessage("Dosya Açılmadı");
+
+for(x=1;x<=n;x++)
+{
+say=0;
+for(y=x;y>=1;y--)
+  if((x%y)==0) say++;
+if(say==2)
+fprintf(f,"%3d\n",x);
+}
+fclose(f);
+ShowMessage("Asal Sayılar Bulunmuştur");
+
+
+}
+//---------------------------------------------------------------------------
