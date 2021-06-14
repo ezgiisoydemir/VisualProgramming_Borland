@@ -1,0 +1,25 @@
+
+// [a,b] aralığındaki asal sayıları bulur kütüğe kaydeder
+
+
+int alt,ust,x,y,say;
+FILE *f;
+alt=StrToInt(Edit1->Text);
+ust=StrToInt(Edit2->Text);
+
+if((f=fopen("c:\\asal.txt","w"))==NULL)
+  ShowMessage("Dosya açılamadı");
+fprintf(f,"ASAL SAYILAR \n");
+fprintf(f,"============= \n");
+
+for(x=alt;x<=ust;x=x+1){
+  say=0;
+  for(y=x;y>=1;y=y-1)
+    if((x%y)==0) say++;
+//  ShowMessage("x="+IntToStr(x)+"\n"+
+//              "say="+IntToStr(say));
+    if((say==2)&&(x>2))
+      fprintf(f,"%3d \n",x);
+      }
+fclose(f);
+ShowMessage("Asal sayılar dosya içerisine yazıldı...");
