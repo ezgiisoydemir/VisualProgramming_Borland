@@ -1,0 +1,36 @@
+
+ÖRNEK: [0,1000] aralığına rasgele üretilen 20 adet tam sayıyı, herbir sayı için 4 basamak yer ayırıp 
+4x5 matris formatında veri.txt dosyasına yazan ve dosyadan okuyan programı oluşturunuz. 
+
+// DOSYAYA  YAZMA  İŞLEMİ 
+
+int x,y,z;
+FILE *f;
+srand(time(NULL));
+if((f=fopen("c:\\veri.txt","w"))==NULL)
+  ShowMessage("Dosya açılamadı");
+for(x=0;x<4;x++){
+for(y=0;y<5;y++){
+  z=rand()%1001;
+  fprintf(f,"%4d ",z);
+  }
+  fprintf(f,"\n");
+  }
+fclose(f);
+ShowMessage("VERİLER DOSYA İÇERİSİNE YAZILDI...");
+
+
+// DOSYADAN  OKUMA  İŞLEMİ 
+
+int x,y,a;
+FILE *f;
+if((f=fopen("c:\\veri.txt","r"))==NULL)
+  ShowMessage("Dosya açılamadı");
+for(x=0;x<4;x++){
+for(y=0;y<5;y++){
+  fscanf(f,"%4d",&a);
+  ShowMessage(IntToStr(x+1)+" - "+IntToStr(y+1)+" = "+IntToStr(a));
+  }
+  fprintf(f,"\n");
+  }
+fclose(f);
