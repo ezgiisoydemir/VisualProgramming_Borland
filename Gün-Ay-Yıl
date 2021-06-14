@@ -1,0 +1,57 @@
+
+//---------------------------------------------------------------------------
+#include <vcl\vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+float y,a,g,toplam=0.0;
+int x;
+int ay[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+g=StrToFloat(Edit1->Text);   //Gün
+a=StrToFloat(Edit2->Text);   //Ay
+y=StrToFloat(Edit3->Text);   //Yıl
+
+toplam=(y-1)*365;
+toplam = int((y-1)/4);
+
+for(x=1;x<=12;x++)
+  if(x>=a) break;
+  else toplam+=ay[x];
+
+toplam+=g;
+x=y;
+if((a>2)&&(x%4==0))
+        toplam++;
+toplam=toplam/7 - int(toplam/7);
+x=int(toplam*7+0.5);
+switch(x){
+          case 0: Edit4->Text = "CUMARTESİ";
+          break;
+          case 1: Edit4->Text = "PAZAR";
+          break;
+          case 2: Edit4->Text = "PAZARTESİ";
+          break;
+          case 3: Edit4->Text = "SALI";
+          break;
+          case 4: Edit4->Text = "ÇARŞAMBA";
+          break;
+          case 5: Edit4->Text = "PERŞEMBE";
+          break;
+          case 6: Edit4->Text = "CUMA";
+          break; }
+
+
+}
+//---------------------------------------------------------------------------
